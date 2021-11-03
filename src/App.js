@@ -5,6 +5,10 @@ import { styled } from '@mui/styles';
 import Nav from './components/Nav';
 import BillCard from './components/BillSummary/Card';
 import { CheckCircle } from '@mui/icons-material';
+import DataTable from './components/Table';
+import MyTable from './components/MyTable';
+import Item from './components/Item';
+import SearchTable from './components/SearchTable';
 
 const MyBox = styled(Box)({
   // backgroundColor:`${(props)=>props.bgColor}`
@@ -62,7 +66,10 @@ function App(props) {
 
         </Grid>
 
-
+      <DataTable mt={4}/>
+      {/* <MyTable/> */}
+      <Item/>
+      <SearchTable/>
       </Container>
     </AppConatiner>
   );
