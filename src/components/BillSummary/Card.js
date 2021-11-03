@@ -18,11 +18,12 @@ const CardBox = styled(Box)({
         left: "15px"
     },
 
-'@media (max-width:667px)':{
-   '& .icon':{
-color:"red"
-   } 
-}
+    '@media (max-width:667px)': {
+        background:"black !important",
+        '& .icon': {
+            color: "red"
+        }
+    }
 })
 
 
@@ -30,7 +31,7 @@ color:"red"
 function BillCard({ icon, heading, amount, bgColor }) {
     return (
         <>
-            <CardBox style={{backgroundColor: bgColor}}>
+            <CardBox style={{ backgroundColor: bgColor }}>
                 <div className="icon">{icon}</div>
                 <div><p>{heading}<br />
                     <span style={{ color: '#28997f' }}>{amount}</span></p></div>

@@ -57,7 +57,7 @@ function App(props) {
             <BillCard icon={<CheckCircle />} heading="Total Payment" amount="322132" bgColor="#ecf7ee"/>
           </Grid>
           <Grid item xs={3}>
-            <BillCard icon={<CheckCircle />} heading="Total Disbursed" amount="322132" bgColor="darkOrange"/>
+            <BillCard icon={<CheckCircle />} heading="Total Disbursed" amount="322132" bgColor="#dbe8f6"/>
           </Grid>
 
         </Grid>
