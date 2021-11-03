@@ -1,24 +1,70 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container, Grid, Box } from '@mui/material';
+import React from 'react';
+import { AppConatiner } from './components/Container.style';
+import { styled } from '@mui/styles';
+import Nav from './components/Nav';
+import BillCard from './components/BillSummary/Card';
+import { CheckCircle } from '@mui/icons-material';
 
-function App() {
+const MyBox = styled(Box)({
+  // backgroundColor:`${(props)=>props.bgColor}`
+  background: "red",
+  padding: "20px"
+})
+
+const MyDiv = styled('div')({
+  // backgroundColor:`${(props)=>props.bgColor}`
+  background: "green",
+  padding: "4px",
+  display: "flex",
+  justifyContent: "space-around"
+})
+
+
+const InDiv = styled('div')({
+  backgroundColor: "#f1f1f1",
+  width: "100px",
+  margin: "10px",
+  textAlign: "center",
+  lineHeight: "75px",
+  fontSize: "30px",
+})
+
+
+
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppConatiner>
+      <Nav />
+      <Container fixed >
+        <Grid container spacing={2} mt={4}>
+          <Grid item xs={12} md={6}>
+            <MyBox>xs=8</MyBox>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Box>
+              <MyDiv>
+                <InDiv>1</InDiv>
+                <InDiv>2</InDiv>
+              </MyDiv>
+            </Box>
+          </Grid>
+        </Grid>
+
+
+        <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 1 }} mt={3}>
+          <Grid item xs={3}>
+            <BillCard icon={<CheckCircle />} heading="Total Payment" amount="322132" bgColor="#ecf7ee"/>
+          </Grid>
+          <Grid item xs={3}>
+            <BillCard icon={<CheckCircle />} heading="Total Disbursed" amount="322132" bgColor="darkOrange"/>
+          </Grid>
+
+        </Grid>
+
+
+      </Container>
+    </AppConatiner>
   );
 }
 
