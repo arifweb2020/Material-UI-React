@@ -42,6 +42,19 @@ function App(props) {
       <Nav />
       <Container fixed >
         <h1>First Case</h1>
+        <Grid container>
+          {/* offset grid with column you want to offset */}
+          <Grid item lg={6} md={6} sm={6} />
+          {/* main grid column! */}
+          <Grid item lg={6} md={6} sm={6}>
+            I am offset column!.🔥
+          </Grid>
+          <Grid item lg={4} md={4} sm={4} />
+          {/* main grid column! */}
+          <Grid item lg={4} md={4} sm={4}>
+            I am offset column!...............🔥
+          </Grid>
+        </Grid>
         <Grid container spacing={2} mt={4}>
           <Grid item xs={12} md={6}>
             <MyBox>xs=8</MyBox>
@@ -59,18 +72,18 @@ function App(props) {
 
         <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 1 }} mt={3}>
           <Grid item xs={3}>
-            <BillCard icon={<CheckCircle />} heading="Total Payment" amount="322132" bgColor="#ecf7ee"/>
+            <BillCard icon={<CheckCircle />} heading="Total Payment" amount="322132" bgColor="#ecf7ee" />
           </Grid>
           <Grid item xs={3}>
-            <BillCard icon={<CheckCircle />} heading="Total Disbursed" amount="322132" bgColor="#dbe8f6"/>
+            <BillCard icon={<CheckCircle />} heading="Total Disbursed" amount="322132" bgColor="#dbe8f6" />
           </Grid>
 
         </Grid>
 
-      <DataTable mt={4}/>
-      {/* <MyTable/> */}
-      <Item/>
-      <SearchTable/>
+        <DataTable mt={4} />
+        {/* <MyTable/> */}
+        <Item />
+        <SearchTable />
       </Container>
     </AppConatiner>
   );
