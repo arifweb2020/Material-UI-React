@@ -41,6 +41,7 @@ function App(props) {
     <AppConatiner>
       <Nav />
       <Container fixed >
+        <h1>First Case</h1>
         <Grid container spacing={2} mt={4}>
           <Grid item xs={12} md={6}>
             <MyBox>xs=8</MyBox>

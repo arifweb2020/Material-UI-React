@@ -17,6 +17,19 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
 import TableHead from "@material-ui/core/TableHead";
 import axios from "axios"
+import styled from "styled-components";
+
+
+const MyDivs = styled.div`
+background-color:black;
+width:300px;
+padding:2px;
+
+& h2{
+  color:darkorange
+}
+
+`
 
 
 function TablePaginationActions(props) {
@@ -127,8 +140,13 @@ export default function SearchTable() {
   
 },[search,data]);
 
+
   return (
       <>
+      <MyDivs>
+        <h2>Custom Search Table</h2>
+        
+        </MyDivs>
       <input type="text"
             placeholder="search here"
             onChange={e=>setSearch(e.target.value)}
@@ -151,7 +169,12 @@ export default function SearchTable() {
           .map((row) => (
             <TableRow key={row.id}>
               <TableCell component="th" scope="row">
-                {row.name}
+                {row.name}----{
+                    row.id === 1 ? <button style={{background:'red'}}> btn1 </button> :
+                        row.id === 2 ? <button style={{background:'green'}}> btn1 </button> :
+                            row.id === 3 ? <button style={{background:'pink'}}> btn1 </button> :
+                                <button style={{background:'grey'}}> btn1 </button>
+                }
               </TableCell>
               <TableCell style={{ width: 160 }} align="right">
                 {row.username}

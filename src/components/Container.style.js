@@ -5,6 +5,15 @@ width:100vw;
 height:100vh;
 background-color:#fff;
 overflow-x:hidden;
+
+& h1{
+  color:red;
+}
+
+
+@media (max-width: 768px) {
+  background: grey;
+}
 `
 
 export const MyHeader = styled.h2`
