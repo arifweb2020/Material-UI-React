@@ -86,7 +86,6 @@ export default function SearchTable() {
 
     const [data,setData]=useState([])
     const [search,setSearch]=useState("")
-    const [filterdata,setFilterdata]=useState([]);
 
     useEffect(()=>{
         getData()
@@ -117,16 +116,6 @@ export default function SearchTable() {
     setPage(0);
   };
 
-  useEffect(()=>{
-
-    setFilterdata(
-
-        data.filter((e)=> e.name.toLowerCase().includes(search.toLowerCase()))
-
-    );
-  
-},[search,data]);
-
   return (
       <>
       <input type="text"
@@ -145,9 +134,18 @@ export default function SearchTable() {
         </TableHead>
         <TableBody>
           {(rowsPerPage > 0
-            ? filterdata.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-            : filterdata
+            ? data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+            : data
           )
+          .filter((item) => {
+            if (search == "") {
+              return item;
+            } else if (
+              item.name.toLowerCase().includes(search.toLowerCase())
+            ) {
+              return item;
+            }
+          })
           .map((row) => (
             <TableRow key={row.id}>
               <TableCell component="th" scope="row">
@@ -173,7 +171,7 @@ export default function SearchTable() {
             <TablePagination
               rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
               colSpan={3}
-              count={filterdata.length}
+              count={data.length}
               rowsPerPage={rowsPerPage}
               page={page}
               SelectProps={{
