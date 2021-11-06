@@ -1,0 +1,19 @@
+.card {
+    display: flex;
+    justify-content: space-around;
+    background-color:#ecf7ee;
+    width: 220px;
+    border-radius: 18px;
+  }
+  
+  .card > div {
+    margin: 10px;  
+  }
+
+  .card > .icon{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 15px;
+  }

@@ -1,24 +1,23 @@
 import React from 'react';
+import SideNav from './components/SideNav/SideNav';
 import { GlobalStyle } from './GlobalStyle';
-import { HeadingColor } from './GlobalStyle';
-import { MainDiv } from './GlobalStyle';
-import Card from './components/Card'
+import { BrowserRouter as Router} from 'react-router-dom'
+import { Box } from '@mui/material';
+import MainView from './MainView';
 
 
 function App(props) {
   return (
-  
-    <div>
+
+    <Router>
+      <>
+      <Box sx={{ display: 'flex' }}>
       <GlobalStyle/>
-      <HeadingColor>MUI</HeadingColor>
-      <MainDiv>
-        <h2>Welcome</h2>
-        <div className="innerDiv">
-        <h3>inner div</h3>
-        </div>
-        </MainDiv>
-        <Card/>
-    </div>
+      <SideNav/>
+      <MainView/>
+      </Box>
+    </>
+    </Router>
   );
 }
 
